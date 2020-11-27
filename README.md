@@ -18,5 +18,5 @@ If you find this useful, please cite the paper.
 If you want to reproduce the results of PANEL publication, the PANELM is recommended. Due to the distance between the core FRC calculation of PANELJ, and PANELM, and the difference between Fourier transform of Matlab and imagej, there may exist a gap between the results of PANELM and PANELJ. To me, the implementations of core FRC, and Fourier transform in **PANELM**  are more flexible and accurate. This imagej plugin is work in progress, so expect rough edges. 
 
 <p>
-<img src='/img/PANELJ.svg' align="left" width=100>
+<img src='/img/PANELJ.svg' align="middle" width=300>
 </p>
