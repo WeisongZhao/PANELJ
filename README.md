@@ -4,10 +4,10 @@
 </p>
 </br>
 <p>
-<img src='/img/imagej-128.png' align="left" width=110>
+<img src='/img/imagej-128.png' align="left" width=120>
 </p>
 
-</br>
+
 This repository is for Simplified PANEL (w/o RSM) and will be in continued development. The full PANEL can be found in [PANELM](https://github.com/WeisongZhao/PANELM). If you find this useful, please cite the paper. <b>Weisong Zhao et al. PANEL: Pixel-level ANalysis of Error Locations,  X(X), XXX-XXX (2021)</b>
 </br>
 </br>
