@@ -7,11 +7,11 @@ import org.apache.commons.math3.analysis.interpolation.LoessInterpolator;
 import org.apache.commons.math3.util.FastMath;
 
 /**
- * Created by weisong on 11/25/2020.
+ * Created by weisong on 11/27/2020.
 
- * Note, this code is a minimally adapted reproduction of the code from Alex Herbert found in
- * https://github.com/aherbert/GDSC-SMLM/blob/36dde5f98ca749396832c3098c1d21d4755b5914/src/main/java/gdsc/smlm/ij/frc/FRC.java
- * All merit goes to him
+ * Note, this code is for single-frame FRC calculation.
+ * 
+ * 
  */
 
 import ij.ImageStack;
@@ -19,18 +19,6 @@ import ij.process.FHT;
 import ij.process.FloatProcessor;
 import ij.process.ImageProcessor;
 
-/*-----------------------------------------------------------------------------
- * GDSC SMLM Software
- *
- * Copyright (C) 2013 Alex Herbert
- * Genome Damage and Stability Centre
- * University of Sussex, UK
- *
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 3 of the License, or
- * (at your option) any later version.
- *---------------------------------------------------------------------------*/
 
 /**
  * Compute the Fourier Ring Correlation, a measure of the resolution of a
