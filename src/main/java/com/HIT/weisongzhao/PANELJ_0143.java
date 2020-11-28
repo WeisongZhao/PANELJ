@@ -145,8 +145,8 @@ public class PANELJ_0143 extends JDialog implements PlugIn {
 				for (int yStart = 0; yStart < w; yStart += skip) {
 					IJ.showStatus("Start rFRC mapping - 1/7 hard threshold");
 					IJ.showProgress(w * xStart + yStart, w * h);
-					FloatProcessor ipROI1 = getROI(ip1, xStart, yStart, blockSize, blockSize);
-					FloatProcessor ipROI2 = getROI(ip2, xStart, yStart, blockSize, blockSize);
+					FloatProcessor ipROI1 = getROI(ip1, yStart, xStart, blockSize, blockSize);
+					FloatProcessor ipROI2 = getROI(ip2, yStart, xStart, blockSize, blockSize);
 					float suming = 0;
 					int flage = 0;
 					for (int xsum = 0; xsum < skip; xsum++) {
@@ -162,18 +162,18 @@ public class PANELJ_0143 extends JDialog implements PlugIn {
 
 						resolution = myFRC.calculateFireNumber(ipROI1, ipROI2, FRC.ThresholdMethod.FIXED_1_OVER_7);
 						if (!Double.isNaN(resolution) && !Double.isInfinite(resolution)) {
-							vectors.add(new double[] { xStart, yStart, resolution * pixelSize });
+							vectors.add(new double[] { yStart, xStart, resolution * pixelSize });
 						} else {
 							resolution = myFRC.calculateFireNumber(ipROI1, ipROI2, FRC.ThresholdMethod.THREE_SIGMA)
 									/ 1.1;
 
 							if (!Double.isNaN(resolution) && !Double.isInfinite(resolution)) {
-								vectors.add(new double[] { xStart, yStart, resolution * pixelSize });
+								vectors.add(new double[] { yStart, xStart, resolution * pixelSize });
 							}
 //						else {
 //							resolution = myFRC.calculateFireNumber(ipROI1, ipROI2, FRC.ThresholdMethod.FIVE_SIGMA);
 //							if (!Double.isNaN(resolution) && !Double.isInfinite(resolution)) {
-//								vectors.add(new double[] { xStart, yStart, resolution * pixelSize });
+//								vectors.add(new double[] { yStart, xStart, resolution * pixelSize });
 //							}
 //						}
 						}
@@ -217,7 +217,7 @@ public class PANELJ_0143 extends JDialog implements PlugIn {
 			for (int p = 0; p < nValues; p++) {
 				for (int xx = 0; xx < skip; xx++) {
 					for (int yy = 0; yy < skip; yy++) {
-						position = (min((yPositions[p] + yy), w - 1) * w + min((xPositions[p] + xx), h - 1));
+						position = (min((yPositions[p] + yy), h - 1) * w + min((xPositions[p] + xx), w - 1));
 
 						positionint = min(max(min(round(position), Integer.MAX_VALUE), 0), w * h);
 

@@ -22,7 +22,7 @@
 
 		<groupId>com.HIT.weisongzhao</groupId>
 		<artifactId>PANELJ_</artifactId>
-		<version>0.1.0</version>
+		<version>0.1.5</version>
 
 		<name>PANEL: pixel-level analysis of error locations</name>
 		<url>https://github.com/WeisongZhao/PANELJ</url>
