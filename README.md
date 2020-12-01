@@ -6,11 +6,7 @@
 </br>
 
 <p>
-<img src='/img/splash.png' align="left" width=120>
-</p>
-
-<p>
-<img src='/img/imagej-128.png' align="right" width=50>
+<img src='/img/splash.png' align="left" width=150>
 </p>
 
 
@@ -19,6 +15,11 @@ This repository is for Simplified PANEL (w/o RSM) and will be in continued devel
 </br>
 </br>
 
+<p>
+<img src='/img/imagej-128.png' align="right" width=50>
+</p>
+</br>
+</br>
 [Portal]() to the plugin.
 
 ## PANELJ for error mapping (3-sigma curve)
