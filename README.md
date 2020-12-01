@@ -6,11 +6,12 @@
 </br>
 
 <p>
-<img src='/img/splash.png' align="left" width=150>
+<img src='/img/splash.png' align="left" width=180>
 </p>
 
 
 This repository is for Simplified PANEL (w/o RSM) and will be in continued development. The full PANEL can be found in [PANELM](https://github.com/WeisongZhao/PANELM). If you find this useful, please cite the paper. <b>Weisong Zhao et al. PANEL: Pixel-level ANalysis of Error Locations,  X(X), XXX-XXX (2021)</b>
+
 </br>
 </br>
 </br>
@@ -19,7 +20,7 @@ This repository is for Simplified PANEL (w/o RSM) and will be in continued devel
 <img src='/img/imagej-128.png' align="right" width=50>
 </p>
 </br>
-</br>
+
 [Portal]() to the plugin.
 
 ## PANELJ for error mapping (3-sigma curve)
