@@ -4,8 +4,13 @@
 <h5 align="center">Pixel-level ANalysis of Error Locations (or resolution) with FIJI/ImageJ.</h5>
 </p>
 </br>
+
 <p>
-<img src='/img/imagej-128.png' align="left" width=120>
+<img src='/img/splash.png' align="left" width=120>
+</p>
+
+<p>
+<img src='/img/imagej-128.png' align="right" width=50>
 </p>
 
 
