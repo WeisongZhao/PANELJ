@@ -6,7 +6,7 @@
 </br>
 
 <p>
-<img src='/img/splash.png' align="left" width=180>
+<img src='./img/splash.png' align="left" width=180>
 </p>
 
 
@@ -17,22 +17,27 @@ This repository is for Simplified PANEL (w/o RSM) and will be in continued devel
 </br>
 
 <p>
-<img src='/img/imagej-128.png' align="right" width=50>
+<img src='./img/imagej-128.png' align="right" width=50>
 </p>
 </br>
 
 [Portal]() to the plugin.
 
 ## PANELJ for error mapping (3-sigma curve)
+
 <p align='center'>
-<img src='/img/PANELJ.png' align="center" width=700>
+<img src='./img/PANELJ-Manual.png' align="center" width=700>
+</p>
+
+<p align='center'>
+<img src='./img/PANELJ.png' align="center" width=700>
 </p>
 
 ## PANELJ for resolution mapping (1/7 hard threshold)
 Although the so-called 1/7 threshold has been discussed in our manuscript to be unstable in local resolution mapping, we still provide the resolution mapping feature based on 1/7 threshold. The reason is that the 1/7 threshold is popular and has been used widely. We intend to give an identical local resolution mapping for the users.
 
 <p align='center'>
-<img src='/img/PANELJ2.png' align="center" width=700>
+<img src='./img/PANELJ2.png' align="center" width=700>
 </p>
 
 ## Declaration

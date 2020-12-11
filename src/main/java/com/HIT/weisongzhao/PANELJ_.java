@@ -12,17 +12,17 @@
  * 
  * This file is part of PANEL Analyze plugin (PANEL).
  * 
- * POFI is free software: you can redistribute it and/or modify it under the
+ * PANEL is free software: you can redistribute it and/or modify it under the
  * terms of the GNU General Public License as published by the Free Software
  * Foundation, either version 3 of the License, or (at your option) any later
  * version.
  * 
- * POFI is distributed in the hope that it will be useful, but WITHOUT ANY
+ * PANEL is distributed in the hope that it will be useful, but WITHOUT ANY
  * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
  * A PARTICULAR PURPOSE. See the GNU General Public License for more details.
  * 
  * You should have received a copy of the GNU General Public License along with
- * POFI. If not, see <http://www.gnu.org/licenses/>.
+ * PANEL. If not, see <http://www.gnu.org/licenses/>.
  */
 
 package com.HIT.weisongzhao;
@@ -88,9 +88,9 @@ public class PANELJ_ extends JDialog implements PlugIn {
 
 		GenericDialog gd = new GenericDialog("rFRC - 3-sigma curve");
 		gd.addChoice("Image sequence", titles, titles[imageChoice]);
-		gd.addNumericField("Block Size", blockSize, 0, 5, " pixel ");
-		gd.addNumericField("Background Intensity", backgroundIntensity, 0, 5, "0~255");
-		gd.addNumericField("Skip", skip, 0, 3, "pixel (Speed up calculation)");
+		gd.addNumericField("Block Size", blockSize, 0, 5, "pixel (64 in default)");
+		gd.addNumericField("Background Intensity", backgroundIntensity, 0, 5, "0~255 (background of your data)");
+		gd.addNumericField("Skip", skip, 0, 3, "pixel (Speed up calculation, 1~block-size/2)");
 		gd.addNumericField("Pixel Size", pixelSize, 2, 5, "(nm)");
 
 		gd.showDialog();
@@ -251,6 +251,7 @@ public class PANELJ_ extends JDialog implements PlugIn {
 		image.show();
 		ImagePlus maskshow = new ImagePlus("Simplified PANEL (w/o RSM)", msstack);
 		NJ_LUT.applyLUT_PANEL_rFRCmask(maskshow);
+		ij.IJ.run("Calibration Bar...", "location=[Lower Right] fill=Black label=White number=4 decimal=0 font=12 zoom=1 bold");
 		maskshow.show();
 		rt.show("rFRC-Mapping metrics - 3-sigma curve");
 

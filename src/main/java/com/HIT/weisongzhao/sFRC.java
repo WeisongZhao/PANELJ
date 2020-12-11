@@ -13,9 +13,6 @@ import ij.process.ImageProcessor;
 
 /**
  * Created by weisong on 11/25/2020.
-
-
-
  * Note, this code is a minimally adapted reproduction of the code from Alex Herbert found in
  * https://github.com/aherbert/GDSC-SMLM/blob/36dde5f98ca749396832c3098c1d21d4755b5914/src/main/java/gdsc/smlm/ij/frc/FRC.java
  * All merit goes to him
@@ -1195,8 +1192,7 @@ public class sFRC {
 //---------------------------------PANEL Modifications------------------------------------
 //---------------------------------PANEL Modifications------------------------------------
 //---------------------------------PANEL Modifications------------------------------------	
-			
-			
+
 			return new FIREResult(fireNumber, intersection[1]);
 		} else {
 			// Edge case where the entire curve has a correlation of 1.
