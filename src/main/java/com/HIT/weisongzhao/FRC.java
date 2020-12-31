@@ -1,16 +1,3 @@
-package com.HIT.weisongzhao;
-
-import java.util.Arrays;
-
-import org.apache.commons.math3.analysis.function.Log;
-import org.apache.commons.math3.analysis.interpolation.LoessInterpolator;
-import org.apache.commons.math3.util.FastMath;
-
-import ij.ImageStack;
-import ij.process.FHT;
-import ij.process.FloatProcessor;
-import ij.process.ImageProcessor;
-
 /**
  * Created by weisong on 11/25/2020.
  * Note, this code is a minimally adapted reproduction of the code from Alex Herbert found in
@@ -44,6 +31,20 @@ import ij.process.ImageProcessor;
  * @author Alex Herbert
  * @author Bernd Rieger, b.rieger@tudelft.nl
  */
+package com.HIT.weisongzhao;
+
+import java.util.Arrays;
+
+import org.apache.commons.math3.analysis.function.Log;
+import org.apache.commons.math3.analysis.interpolation.LoessInterpolator;
+import org.apache.commons.math3.util.FastMath;
+
+import ij.ImageStack;
+import ij.process.FHT;
+import ij.process.FloatProcessor;
+import ij.process.ImageProcessor;
+
+
 public class FRC {
 
 	Log log = new Log();
