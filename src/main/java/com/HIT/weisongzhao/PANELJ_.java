@@ -222,7 +222,7 @@ public class PANELJ_ extends JDialog implements PlugIn {
 				for (int xx = 0; xx < skip; xx++) {
 					for (int yy = 0; yy < skip; yy++) {
 						position = (min((yPositions[p] + yy), h - 1) * w + min((xPositions[p] + xx), w - 1));
-						positionint = min(max(min(round(position), Integer.MAX_VALUE), 0), w * h);
+						positionint = min(max(min(round(position), Integer.MAX_VALUE), 0), w * h - 1);
 						rFRCMAP[positionint] = values[p];
 						rFRCMASK[positionint] = max(values[p] / (float) min - (float) 1.4, 0);
 					}
