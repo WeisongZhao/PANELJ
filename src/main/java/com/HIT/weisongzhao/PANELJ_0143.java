@@ -191,24 +191,8 @@ public class PANELJ_0143 extends JDialog implements PlugIn {
 				xPositions[counter] = (int) vector[0];
 				yPositions[counter] = (int) vector[1];
 				values[counter] = (float) vector[2];
-				mean += vector[2];
-				max = Math.max(vector[2], max);
-				min = Math.min(vector[2], min);
 				counter++;
 			}
-			mean /= nValues;
-			FRCData data = new FRCData();
-			data.nValues = nValues;
-			data.meanFRC = mean;
-			data.maxFRC = max;
-			data.minFRC = min;
-			data.rFRC = mean / min - 1;
-
-			rt.incrementCounter();
-			rt.addValue("Mean (nm)", data.meanFRC);
-			rt.addValue("rFRC value", data.rFRC);
-			rt.addValue("Min FRC (nm)", data.minFRC);
-			rt.addValue("Max FRC (nm)", data.maxFRC);
 
 			float[] rFRCMAP = new float[w * h];
 			float position;
@@ -225,13 +209,37 @@ public class PANELJ_0143 extends JDialog implements PlugIn {
 				}
 			}
 			rFRCMAP = AMF(rFRCMAP, w, h);
+			counter = 0;
+			for (int pixel = 0; pixel < w * h; pixel++) {
+				if (rFRCMAP[pixel] == 0)
+					;
+				else {
+					mean += rFRCMAP[pixel];
+					counter++;
+					max = Math.max(rFRCMAP[pixel], max);
+					min = Math.min(rFRCMAP[pixel], min);
+				}
+			}
+			mean /= counter;
+			FRCData data = new FRCData();
+			data.nValues = nValues;
+			data.meanFRC = mean;
+			data.maxFRC = max;
+			data.minFRC = min;
+			data.rFRC = mean / min - 1;
+
+			rt.incrementCounter();
+			rt.addValue("Mean (nm)", data.meanFRC);
+			rt.addValue("rFRC value", data.rFRC);
+			rt.addValue("Min FRC (nm)", data.minFRC);
+			rt.addValue("Max FRC (nm)", data.maxFRC);
 			result.addSlice("", rFRCMAP);
 
 		}
-		ImagePlus image = new ImagePlus("rFRC Map - 1/7 hard threshold", result);
+		ImagePlus image = new ImagePlus("rFRC Map - 0.143 hard threshold", result);
 		NJ_LUT.applyLUT_PANEL_rFRC(image);
 		image.show();
-		rt.show("rFRC-Mapping metrics - 1/7 hard threshold");
+		rt.show("rFRC-Mapping metrics - 0.143 hard threshold");
 
 	}
 

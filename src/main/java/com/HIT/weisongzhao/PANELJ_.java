@@ -194,24 +194,9 @@ public class PANELJ_ extends JDialog implements PlugIn {
 				xPositions[counter] = (int) vector[0];
 				yPositions[counter] = (int) vector[1];
 				values[counter] = (float) vector[2];
-				mean += vector[2];
-				max = Math.max(vector[2], max);
-				min = Math.min(vector[2], min);
+				min = Math.min(values[counter], min);
 				counter++;
 			}
-			mean /= nValues;
-			FRCData data = new FRCData();
-			data.nValues = nValues;
-			data.meanFRC = mean;
-			data.maxFRC = max;
-			data.minFRC = min;
-			data.rFRC = mean / min - 1;
-
-			rt.incrementCounter();
-			rt.addValue("Mean (nm)", data.meanFRC);
-			rt.addValue("rFRC value", data.rFRC);
-			rt.addValue("Min FRC (nm)", data.minFRC);
-			rt.addValue("Max FRC (nm)", data.maxFRC);
 
 			float[] rFRCMAP = new float[w * h];
 			float[] rFRCMASK = new float[w * h];
@@ -229,6 +214,29 @@ public class PANELJ_ extends JDialog implements PlugIn {
 				}
 			}
 			rFRCMAP = AMF(rFRCMAP, w, h);
+			counter = 0;
+			for (int pixel = 0; pixel < w * h; pixel++) {
+				if (rFRCMAP[pixel] == 0)
+					;
+				else {
+					mean += rFRCMAP[pixel];
+					counter++;
+					max = Math.max(rFRCMAP[pixel], max);
+					min = Math.min(rFRCMAP[pixel], min);
+				}
+			}
+
+			FRCData data = new FRCData();
+			data.meanFRC = mean /= counter;
+			data.maxFRC = max;
+			data.minFRC = min;
+			data.rFRC = mean / min - 1;
+			rt.incrementCounter();
+			rt.addValue("Mean (nm)", data.meanFRC);
+			rt.addValue("rFRC value", data.rFRC);
+			rt.addValue("Min FRC (nm)", data.minFRC);
+			rt.addValue("Max FRC (nm)", data.maxFRC);
+
 			rFRCMASK = AMF(rFRCMASK, w, h);
 			result.addSlice("", rFRCMAP);
 			resultmask.addSlice("", rFRCMASK);
@@ -251,7 +259,8 @@ public class PANELJ_ extends JDialog implements PlugIn {
 		image.show();
 		ImagePlus maskshow = new ImagePlus("Simplified PANEL (without RSM)", msstack);
 		NJ_LUT.applyLUT_PANEL_rFRCmask(maskshow);
-		ij.IJ.run("Calibration Bar...", "location=[Lower Right] fill=Black label=White number=4 decimal=0 font=12 zoom=1 bold");
+		ij.IJ.run("Calibration Bar...",
+				"location=[Lower Right] fill=Black label=White number=4 decimal=0 font=12 zoom=1 bold");
 		maskshow.show();
 		rt.show("rFRC-Mapping metrics - 3-sigma curve");
 
