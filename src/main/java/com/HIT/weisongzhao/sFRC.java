@@ -1,5 +1,6 @@
 /**
  * Created by weisong on 11/25/2020.
+
  * Note, this code is a minimally adapted reproduction of the code from Alex Herbert found in
  * https://github.com/aherbert/GDSC-SMLM/blob/36dde5f98ca749396832c3098c1d21d4755b5914/src/main/java/gdsc/smlm/ij/frc/FRC.java
  * All merit goes to him
@@ -1174,16 +1175,15 @@ public class sFRC {
 	 * @param method   the threshold method
 	 * @return The FIRE result (null if computation failed)
 	 */
-	public static FIREResult calculateFire(FRCCurve frcCurve, ThresholdMethod method) {
+	private static FIREResult calculateFire(FRCCurve frcCurve, ThresholdMethod method) {
 		double[] thresholdCurve = calculateThresholdCurve(frcCurve, method);
 		double[][] intersections = getIntersections(frcCurve, thresholdCurve, 2);
-
+		
 		if (intersections != null && intersections.length != 0) {
 			double[] intersection = getCorrectIntersection(intersections, method);
 			double fireNumber = frcCurve.fieldOfView / intersection[0];
 			double point = intersection[0] / frcCurve.fieldOfView;
 			point = 0.95988146 * Math.exp(13.90441896 * (point - 0.97979108)) + 0.55146136;
-//			System.out.printf("%f", (float)point);
 			fireNumber = fireNumber / point;
 //---------------------------------PANEL Modifications------------------------------------
 //---------------------------------PANEL Modifications------------------------------------
@@ -1193,7 +1193,6 @@ public class sFRC {
 //---------------------------------PANEL Modifications------------------------------------
 //---------------------------------PANEL Modifications------------------------------------
 //---------------------------------PANEL Modifications------------------------------------	
-
 			return new FIREResult(fireNumber, intersection[1]);
 		} else {
 			// Edge case where the entire curve has a correlation of 1.

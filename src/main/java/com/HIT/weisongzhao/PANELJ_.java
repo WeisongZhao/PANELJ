@@ -92,7 +92,7 @@ public class PANELJ_ extends JDialog implements PlugIn {
 		gd.addNumericField("Background Intensity", backgroundIntensity, 0, 5, "0~255 (background of your data)");
 		gd.addNumericField("Skip", skip, 0, 3, "pixel (Speed up calculation, 1~block-size/2)");
 		gd.addNumericField("Pixel Size", pixelSize, 2, 5, "(nm)");
-
+		gd.addHelp("https://github.com/WeisongZhao/PANELJ");
 		gd.showDialog();
 		if (gd.wasCanceled())
 			return;
@@ -115,7 +115,7 @@ public class PANELJ_ extends JDialog implements PlugIn {
 		return true;
 	}
 
-	public void rFRC(ImagePlus stack, int blockSize, int backgroundIntensity, int skip, float pixelSize) {
+	private void rFRC(ImagePlus stack, int blockSize, int backgroundIntensity, int skip, float pixelSize) {
 		if (blockSize % 2 != 0)
 			blockSize = blockSize + 1;
 		skip = min(skip, blockSize / 2);
@@ -249,7 +249,7 @@ public class PANELJ_ extends JDialog implements PlugIn {
 
 		NJ_LUT.applyLUT_PANEL_rFRC(image);
 		image.show();
-		ImagePlus maskshow = new ImagePlus("Simplified PANEL (w/o RSM)", msstack);
+		ImagePlus maskshow = new ImagePlus("Simplified PANEL (without RSM)", msstack);
 		NJ_LUT.applyLUT_PANEL_rFRCmask(maskshow);
 		ij.IJ.run("Calibration Bar...", "location=[Lower Right] fill=Black label=White number=4 decimal=0 font=12 zoom=1 bold");
 		maskshow.show();

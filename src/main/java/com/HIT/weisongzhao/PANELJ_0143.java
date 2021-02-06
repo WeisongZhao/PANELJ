@@ -88,7 +88,7 @@ public class PANELJ_0143 extends JDialog implements PlugIn {
 		gd.addNumericField("Background Intensity", backgroundIntensity, 0, 5, "0~255 (background of your data)");
 		gd.addNumericField("Skip", skip, 0, 3, "pixel (Speed up calculation, 1~block-size/2)");
 		gd.addNumericField("Pixel Size", pixelSize, 2, 5, "(nm)");
-
+		gd.addHelp("https://github.com/WeisongZhao/PANELJ");
 		gd.showDialog();
 		if (gd.wasCanceled())
 			return;

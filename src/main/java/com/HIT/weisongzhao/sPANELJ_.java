@@ -115,7 +115,7 @@ public class sPANELJ_ extends JDialog implements PlugIn {
 		return true;
 	}
 
-	public void rFRC(ImagePlus stack, int blockSize, int backgroundIntensity, int skip, float pixelSize) {
+	private void rFRC(ImagePlus stack, int blockSize, int backgroundIntensity, int skip, float pixelSize) {
 		if (blockSize % 2 != 0)
 			blockSize = blockSize + 1;
 		skip = min(skip, blockSize / 2);
@@ -249,7 +249,7 @@ public class sPANELJ_ extends JDialog implements PlugIn {
 
 		NJ_LUT.applyLUT_PANEL_rFRC(image);
 		image.show();
-		ImagePlus maskshow = new ImagePlus("Simplified PANEL (w/o RSM)", msstack);
+		ImagePlus maskshow = new ImagePlus("Simplified PANEL (without RSM)", msstack);
 		NJ_LUT.applyLUT_PANEL_rFRCmask(maskshow);
 		maskshow.show();
 		rt.show("rFRC-Mapping metrics - 3-sigma curve");
@@ -468,7 +468,7 @@ public class sPANELJ_ extends JDialog implements PlugIn {
 
 	public static void main(String[] args) {
 
-		Class<?> clazz = PANELJ_.class;
+		Class<?> clazz = sPANELJ_.class;
 		String url = clazz.getResource("/" + clazz.getName().replace('.', '/') + ".class").toString();
 		String pluginsDir = url.substring("file:".length(),
 				url.length() - clazz.getName().length() - ".class".length());

@@ -1,5 +1,6 @@
 /**
  * Created by weisong on 11/25/2020.
+
  * Note, this code is a minimally adapted reproduction of the code from Alex Herbert found in
  * https://github.com/aherbert/GDSC-SMLM/blob/36dde5f98ca749396832c3098c1d21d4755b5914/src/main/java/gdsc/smlm/ij/frc/FRC.java
  * All merit goes to him
@@ -1175,7 +1176,7 @@ public class FRC {
 	 * @param method   the threshold method
 	 * @return The FIRE result (null if computation failed)
 	 */
-	public static FIREResult calculateFire(FRCCurve frcCurve, ThresholdMethod method) {
+	private static FIREResult calculateFire(FRCCurve frcCurve, ThresholdMethod method) {
 		double[] thresholdCurve = calculateThresholdCurve(frcCurve, method);
 		double[][] intersections = getIntersections(frcCurve, thresholdCurve, 2);
 
