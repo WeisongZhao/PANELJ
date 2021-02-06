@@ -1,6 +1,6 @@
 <p>
 <h1 align="center">PANEL<font color="#b07219">J</font></h1>
-<h6 align="right">v0.1.5</h6>
+<h6 align="right">v0.2.5</h6>
 <h5 align="center">Pixel-level ANalysis of Error Locations (or resolution) with FIJI/ImageJ.</h5>
 </p>
 <br>
