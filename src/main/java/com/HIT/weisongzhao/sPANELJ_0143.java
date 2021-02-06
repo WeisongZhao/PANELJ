@@ -49,11 +49,10 @@ import ij.measure.ResultsTable;
 import ij.plugin.PlugIn;
 import ij.process.ByteProcessor;
 import ij.process.FloatProcessor;
-import ij.process.ImageConverter;
 import ij.process.ImageProcessor;
 
-public class sPANELJ_ extends JDialog implements PlugIn {
-	private static int blockSize = 32;
+public class sPANELJ_0143 extends JDialog implements PlugIn {
+	private static int blockSize = 64;
 	private static int backgroundIntensity = 15;
 	private static int skip = 1;
 	private static float pixelSize = 20;
@@ -86,7 +85,7 @@ public class sPANELJ_ extends JDialog implements PlugIn {
 			}
 		}
 
-		GenericDialog gd = new GenericDialog("Single-frame rFRC (3-sigma curve)");
+		GenericDialog gd = new GenericDialog("Single-frame rFRC (1/7 hard threshold)");
 		gd.addChoice("Image sequence", titles, titles[imageChoice]);
 		gd.addNumericField("Block Size", blockSize, 0, 5, " pixel ");
 		gd.addNumericField("Background Intensity", backgroundIntensity, 0, 5, "0~255");
@@ -118,21 +117,19 @@ public class sPANELJ_ extends JDialog implements PlugIn {
 	private void single_rFRC(ImagePlus stack, int blockSize, int backgroundIntensity, int skip, float pixelSize) {
 		if (blockSize % 2 != 0)
 			blockSize = blockSize + 1;
-
+		int wsub = 0;
+		int hsub = 0;
 		skip = min(skip, blockSize / 2);
 		int w = stack.getWidth();
 		int h = stack.getHeight();
 		int l = stack.getImageStackSize();
-		int wsub = w;
-		int hsub = h;
 		if (w % 2 != 0)
-			wsub = w-1;
+			wsub = 1;
 		if (h % 2 != 0)
-			hsub = h-1;
+			hsub = 1;
 
 		ImageStack ims = stack.getStack();
 		ImageStack result = new ImageStack(w / 2, h / 2);
-		ImageStack resultmask = new ImageStack(w / 2, h / 2);
 		ResultsTable rt = new ResultsTable();
 		float[] pixsub1 = new float[w * h / 4];
 		float[] pixsub2 = new float[w * h / 4];
@@ -145,29 +142,27 @@ public class sPANELJ_ extends JDialog implements PlugIn {
 		ArrayList<double[]> vectors1 = new ArrayList<double[]>();
 		ArrayList<double[]> vectors2 = new ArrayList<double[]>();
 
-		for (int t = 1; t < l+1 ; t++) {
+		for (int t = 1; t < l + 1; t++) {
 			ImageProcessor ip = ims.getProcessor(t);
 			float[] pixArray = (float[]) ip.convertToFloatProcessor().getPixels();
-			
-			for (int x = 0; x < hsub; x = x + 2) {
-//				System.out.printf("%d-", x);
-				for (int y = 0; y < wsub; y = y + 2) {
 
-					pixsub1[x / 2 * (w / 2) + y / 2] = pixArray[x * wsub + y];
-					pixsub2[x / 2 * (w / 2) + y / 2] = pixArray[(x + 1) * wsub + y];
-					pixsub3[x / 2 * (w / 2) + y / 2] = pixArray[x * wsub + y + 1];
-					pixsub4[x / 2 * (w / 2) + y / 2] = pixArray[(x + 1) * wsub + y + 1];
+			for (int x = 0; x < h - hsub; x = x + 2) {
+//				System.out.printf("%d-", x);
+				for (int y = 0; y < w - wsub; y = y + 2) {
+
+					pixsub1[x / 2 * (w / 2) + y / 2] = pixArray[x * w + y];
+					pixsub2[x / 2 * (w / 2) + y / 2] = pixArray[(x + 1) * w + y];
+					pixsub3[x / 2 * (w / 2) + y / 2] = pixArray[x * w + y + 1];
+					pixsub4[x / 2 * (w / 2) + y / 2] = pixArray[(x + 1) * w + y + 1];
 				}
 			}
-
 			ips1.setPixels(pixsub1);
 			ips2.setPixels(pixsub2);
 			ips3.setPixels(pixsub3);
 			ips4.setPixels(pixsub4);
-			
-			
+
 			vectors1 = rFRC(ips1, ips4, blockSize, backgroundIntensity, skip, pixelSize);
-			vectors2 = rFRC(ips3, ips2, blockSize, backgroundIntensity, skip, pixelSize);
+			vectors2 = rFRC(ips2, ips3, blockSize, backgroundIntensity, skip, pixelSize);
 			IJ.showStatus("Ensemble results");
 			int nValues1 = vectors1.size();
 			int nValues2 = vectors2.size();
@@ -246,9 +241,6 @@ public class sPANELJ_ extends JDialog implements PlugIn {
 					min = Math.min(rFRCMAP[pixel], min);
 				}
 			}
-			for (int pixel = 0; pixel < w * h / 4; pixel++)
-				rFRCMASK[pixel] = max(rFRCMAP[pixel] / (float) min - (float) 1.4, 0);
-
 			FRCData data = new FRCData();
 			data.meanFRC = mean /= counter;
 			data.maxFRC = max;
@@ -259,24 +251,10 @@ public class sPANELJ_ extends JDialog implements PlugIn {
 			rt.addValue("rFRC value", data.rFRC);
 			rt.addValue("Min FRC (nm)", data.minFRC);
 			rt.addValue("Max FRC (nm)", data.maxFRC);
-
-			rFRCMASK = AMF(rFRCMASK, w / 2, h / 2);
 			result.addSlice("", rFRCMAP);
-			resultmask.addSlice("", rFRCMASK);
 
 		}
 		ImagePlus image = new ImagePlus("rFRC Map (single-frame)", result);
-		ImagePlus mask = new ImagePlus("", resultmask);
-		ImageConverter ic = new ImageConverter(mask);
-		ic.convertToGray8();
-		ImageStack msslice = new ImageStack(w / 2, h / 2);
-		ImageStack msstack = new ImageStack(w / 2, h / 2);
-		ImageProcessor ms;
-		for (int slice = 0; slice < mask.getImageStackSize(); slice++) {
-			ms = mask.getStack().getProcessor(slice + 1);
-			msslice = ostu(ms);
-			msstack.addSlice("", msslice.getProcessor(1));
-		}
 
 		NJ_LUT.applyLUT_PANEL_rFRC(image);
 		image.show();
@@ -285,13 +263,7 @@ public class sPANELJ_ extends JDialog implements PlugIn {
 		String ls = String.valueOf(l);
 		String customize = "width=" + ws + " height=" + hs + " depth=" + ls + " constrain average interpolation=None";
 		ij.IJ.run("Size...", customize);
-		ImagePlus maskshow = new ImagePlus("Simplified PANEL (single-frame rFRC without RSM)", msstack);
-		NJ_LUT.applyLUT_PANEL_rFRCmask(maskshow);
-//		ij.IJ.run("Calibration Bar...",
-//				"location=[Lower Right] fill=Black label=White number=4 decimal=0 font=12 zoom=1 bold");
-		maskshow.show();
-		ij.IJ.run("Size...", customize);
-		rt.show("Single-frame rFRC-Mapping metrics - 3-sigma curve");
+		rt.show("Single-frame rFRC-Mapping metrics - 0.143 hard threshold");
 	}
 
 	private ArrayList<double[]> rFRC(ImageProcessor ip1s, ImageProcessor ip2s, int blockSize, int backgroundIntensity,
@@ -334,21 +306,15 @@ public class sPANELJ_ extends JDialog implements PlugIn {
 				suming = suming / flage / 2;
 				if ((suming * 255) > (BI)) {
 
-					resolution = myFRC.calculateFireNumber(ipROI1, ipROI2, sFRC.ThresholdMethod.THREE_SIGMA);
+					resolution = myFRC.calculateFireNumber(ipROI1, ipROI2, sFRC.ThresholdMethod.FIXED_1_OVER_7);
 					if (!Double.isNaN(resolution) && !Double.isInfinite(resolution)) {
 						vectors.add(new double[] { xStart, yStart, resolution * pixelSize });
 					} else {
-						resolution = myFRC.calculateFireNumber(ipROI1, ipROI2, sFRC.ThresholdMethod.FIVE_SIGMA)
-								/ (5 / 3);
+						resolution = myFRC.calculateFireNumber(ipROI1, ipROI2, sFRC.ThresholdMethod.TWO_SIGMA)
+								/ 1.1;
 						if (!Double.isNaN(resolution) && !Double.isInfinite(resolution)) {
 							vectors.add(new double[] { xStart, yStart, resolution * pixelSize });
-						} else {
-							resolution = myFRC.calculateFireNumber(ipROI1, ipROI2, sFRC.ThresholdMethod.TWO_SIGMA) * 3
-									/ 2;
-							if (!Double.isNaN(resolution) && !Double.isInfinite(resolution)) {
-								vectors.add(new double[] { xStart, yStart, resolution * pixelSize });
-							}
-						}
+						} 
 					}
 
 				}
@@ -569,7 +535,7 @@ public class sPANELJ_ extends JDialog implements PlugIn {
 
 	public static void main(String[] args) {
 
-		Class<?> clazz = sPANELJ_.class;
+		Class<?> clazz = sPANELJ_0143.class;
 		String url = clazz.getResource("/" + clazz.getName().replace('.', '/') + ".class").toString();
 		String pluginsDir = url.substring("file:".length(),
 				url.length() - clazz.getName().length() - ".class".length());

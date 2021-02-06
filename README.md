@@ -50,7 +50,7 @@ If you want to reproduce the results of PANEL publication, the <b>PANELM</b> (Ma
 <summary><b>Plans</b></summary>
 
 - Reduce the gap between core FRC of PANELM and PANELJ;
-- The single-frame FRC error/resolution mapping;
+- ~~The single-frame FRC error/resolution mapping~~;
 - The RSM combination for full PANEL.
 
 </details>

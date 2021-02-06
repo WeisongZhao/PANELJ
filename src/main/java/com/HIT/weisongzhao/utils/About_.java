@@ -13,7 +13,7 @@ public class About_ extends JDialog implements PlugIn {
 	@Override
 	public void run(String arg) {
 		this.walk.fillAbout("PANEL error mapping", " 11/26/2020",
-				"PANEL: Pixel-level ANalysis of Error Locations <br>v0.1.5",
+				"PANEL: Pixel-level ANalysis of Error Locations <br>v0.2.5",
 				"School of Instrumentation Science and Engineering<br/>Harbin Institute of Technology",
 				"Weisong Zhao (zhaoweisong950713@163.com)", "2020",
 				"<p style=\"text-align:left\">" + "<b>Publications:</b>"

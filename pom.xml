@@ -22,7 +22,7 @@
 
 		<groupId>com.HIT.weisongzhao</groupId>
 		<artifactId>PANELJ_</artifactId>
-		<version>0.1.5</version>
+		<version>0.2.5</version>
 
 		<name>PANEL: pixel-level analysis of error locations</name>
 		<url>https://github.com/WeisongZhao/PANELJ</url>
@@ -85,7 +85,7 @@
 		<properties>
 			<license.licenseName>GNU_3</license.licenseName>
 			<package-name>com.HIT.weisongzhao</package-name>
-			<main-class>com.HIT.weisongzhao.SOFI</main-class>
+			<main-class>com.HIT.weisongzhao.PANELJ</main-class>
 			<license.copyrightOwners>Weisong Zhao</license.copyrightOwners>
 		</properties>
 
