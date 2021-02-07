@@ -1,38 +1,8 @@
-/**
- * Created by weisong on 11/25/2020.
-
- * Note, this code is a minimally adapted reproduction of the code from Alex Herbert found in
- * https://github.com/aherbert/GDSC-SMLM/blob/36dde5f98ca749396832c3098c1d21d4755b5914/src/main/java/gdsc/smlm/ij/frc/FRC.java
- * All merit goes to him
- */
-/*-----------------------------------------------------------------------------
- * GDSC SMLM Software
- *
- * Copyright (C) 2013 Alex Herbert
- * Genome Damage and Stability Centre
- * University of Sussex, UK
- *
- * This program is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 3 of the License, or
- * (at your option) any later version.
- *---------------------------------------------------------------------------*/
-
-/**
- * Compute the Fourier Ring Correlation, a measure of the resolution of a
- * microscopy image.
- * <p>
- * Adapted by Alex Herbert from the FIRE (Fourier Image REsolution) plugin
- * produced as part of the paper:<br>
- * Niewenhuizen, et al (2013). Measuring image resolution in optical nanoscopy.
- * Nature Methods, 10, 557<br>
- * http://www.nature.com/nmeth/journal/v10/n6/full/nmeth.2448.html
- *
- * @author Alex Herbert
- * @author Bernd Rieger, b.rieger@tudelft.nl
- */
 package com.HIT.weisongzhao;
-
+/**
+ * Created by Weisong on 11/25/2020.
+ * Compute the single-frame Fourier Ring Correlation.
+ */
 import java.util.Arrays;
 
 import org.apache.commons.math3.analysis.function.Log;
