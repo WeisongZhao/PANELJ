@@ -1,8 +1,8 @@
 package com.HIT.weisongzhao;
-/**
- * Created by Weisong on 11/25/2020.
- * Compute the two-frame Fourier Ring Correlation.
- */
+
+//Created by Weisong on 11/25/2020.
+//Compute the two-frame Fourier Ring Correlation.
+
 import java.util.Arrays;
 
 import org.apache.commons.math3.analysis.function.Log;
