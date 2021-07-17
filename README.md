@@ -10,7 +10,7 @@
 </p>
 
 
-This repository is for Simplified PANEL (w/o RSM) and will be in continued development. The full PANEL can be found in [PANELM](https://github.com/WeisongZhao/PANELM). If you find this useful, please cite the paper. <b>Weisong Zhao et al. PANEL: Pixel-level ANalysis of Error Locations,  X(X), XXX-XXX (2021)</b>
+This repository is for Simplified PANEL (w/o RSM) and will be in continued development. The full PANEL can be found in [PANELM](https://github.com/WeisongZhao/PANELM). If you find this useful, please cite the paper. <b>Weisong Zhao et al. PANEL: quantitatively mapping reconstruction errors at super-resolution scale by rolling Fourier ring correlation, Nature Methods, X, XXX-XXX (2022)</b>.
 
 <br>
 <br>
@@ -56,4 +56,4 @@ If you want to reproduce the results of PANEL publication, the <b>PANELM</b> (Ma
 </details>
 
 ## Open source [PANELJ](https://github.com/WeisongZhao/PANELJ)
-This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version. This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+This software and corresponding methods can only be used for **non-commercial** use, and they are under **Open Data Commons Open Database License v1.0**.
