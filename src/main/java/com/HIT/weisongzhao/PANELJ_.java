@@ -1,29 +1,27 @@
-/* 
-* Conditions of use: You are free to use this software for research or
-* educational purposes. In addition, we expect you to include adequate
-* citations and acknowledgments whenever you present or publish results that
-* are based on it.
-* 
-* Reference: [1]. Weisong Zhao, et al. "PANEL (2021).
-*/
-
-/*
- * Copyright 2020 Weisong Zhao.
- * 
- * This file is part of PANEL Analyze plugin (PANEL).
- * 
- * PANEL is free software: you can redistribute it and/or modify it under the
- * terms of the GNU General Public License as published by the Free Software
- * Foundation, either version 3 of the License, or (at your option) any later
- * version.
- * 
- * PANEL is distributed in the hope that it will be useful, but WITHOUT ANY
- * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
- * A PARTICULAR PURPOSE. See the GNU General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License along with
- * PANEL. If not, see <http://www.gnu.org/licenses/>.
- */
+// Conditions of use: You are free to use this software for research or
+// educational purposes. In addition, we expect you to include adequate
+// citations and acknowledgments whenever you present or publish results that
+// are based on it.
+//% *********************************************************************************
+//% It is a part of publication:
+//% Weisong Zhao et al. PANEL: quantitatively mapping reconstruction errors in
+//% super-resolution scale via rolling Fourier ring correlation,
+//% Nature Methods, X, XXX-XXX (2022).
+//% *********************************************************************************
+//%    Copyright 2019~2021 Weisong Zhao et al.
+//%
+//%    This program is free software: you can redistribute it and/or modify
+//%    it under the terms of the Open Data Commons Open Database License v1.0.
+//%
+//%    This program is distributed in the hope that it will be useful,
+//%    but WITHOUT ANY WARRANTY; without even the implied warranty of
+//%    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+//%    Open Data Commons Open Database License for more details.
+//%
+//%    You should have received a copy of the
+//%    Open Data Commons Open Database License
+//%    along with this program.  If not, see:
+//%    <https://opendatacommons.org/licenses/odbl/>.
 
 package com.HIT.weisongzhao;
 

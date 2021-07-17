@@ -1,29 +1,9 @@
-/* 
-* Conditions of use: You are free to use this software for research or
-* educational purposes. In addition, we expect you to include adequate
-* citations and acknowledgments whenever you present or publish results that
-* are based on it.
-* 
-* Reference: [1]. Weisong Zhao, et al. "PANEL (2021).
-*/
-
-/*
- * Copyright 2020 Weisong Zhao.
- * 
- * This file is part of PANEL Analyze plugin (PANEL).
- * 
- * PANEL is free software: you can redistribute it and/or modify it under the
- * terms of the GNU General Public License as published by the Free Software
- * Foundation, either version 3 of the License, or (at your option) any later
- * version.
- * 
- * PANEL is distributed in the hope that it will be useful, but WITHOUT ANY
- * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
- * A PARTICULAR PURPOSE. See the GNU General Public License for more details.
- * 
- * You should have received a copy of the GNU General Public License along with
- * PANEL. If not, see <http://www.gnu.org/licenses/>.
- */
+// Conditions of use: You are free to use this software for research or
+// educational purposes. In addition, we expect you to include adequate
+// citations and acknowledgments whenever you present or publish results that
+// are based on it.
+// This software and corresponding methods can only be used for non-commercial use, and they
+// are under Open Data Commons Open Database License v1.0.
 
 package com.HIT.weisongzhao;
 
