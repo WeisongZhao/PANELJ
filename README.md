@@ -45,6 +45,7 @@ This repository contains the java source code (Maven) for <b>PANEL</b> imagej pl
 
 If you want to reproduce the results of PANEL publication, the <b>PANELM</b> (Matlab version) is recommended. Due to the distance between the core FRC calculation of <b>PANELJ</b>, and <b>PANELM</b>, and the difference between Fourier transform of Matlab and imagej, there may exist a gap between the results of <b>PANELM</b> and <b>PANELJ</b>. The implementations of core FRC, and Fourier transform in <b>PANELM</b> are more flexible and accurate. 
 
+[PANELM](https://github.com/WeisongZhao/PANELM)
 
 <details>
 <summary><b>Plans</b></summary>
