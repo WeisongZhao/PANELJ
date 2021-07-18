@@ -2,7 +2,7 @@
 [![website](https://img.shields.io/badge/website-up-green.svg)](https://weisongzhao.github.io/PANELJ/)
 [![paper](https://img.shields.io/badge/paper-nat.%20methods-black.svg)](https://www.nature.com/nmeth/)
 [![Github commit](https://img.shields.io/github/last-commit/WeisongZhao/PANELJ)](https://github.com/WeisongZhao/PANELJ/)
-[![releases](https://img.shields.io/badge/imagej%20plugin-blue.svg)](https://github.com/WeisongZhao/PANELJ/blob/main/PANELJ_-0.2.5.jar/)
+[![releases](https://img.shields.io/badge/plugin-v0.2.5-black.svg)](https://github.com/WeisongZhao/PANELJ/blob/main/PANELJ_-0.2.5.jar/)
 [![License](https://img.shields.io/github/license/WeisongZhao/PANELJ)](https://github.com/WeisongZhao/PANELJ/blob/master/LICENSE/)<br>
 [![Twitter](https://img.shields.io/twitter/follow/weisong_zhao?label=weisong)](https://twitter.com/weisong_zhao/status/1370308101690118146)
 [![GitHub watchers](https://img.shields.io/github/watchers/WeisongZhao/PANELJ?style=social)](https://github.com/WeisongZhao/PANELM/) 
