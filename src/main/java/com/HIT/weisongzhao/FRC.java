@@ -1,7 +1,7 @@
 package com.HIT.weisongzhao;
 
 //Created by Weisong on 11/25/2020.
-
+//Adapted from https://github.com/aherbert/GDSC-SMLM
 //Compute the two-frame Fourier Ring Correlation.
 
 import java.util.Arrays;
