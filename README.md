@@ -1,7 +1,7 @@
 
 [![website](https://img.shields.io/badge/website-up-green.svg)](https://weisongzhao.github.io/PANELJ/)
 [![paper](https://img.shields.io/badge/paper-nat.%20methods-black.svg)](https://www.nature.com/nmeth/)
-[![releases](https://img.shields.io/badge/plugin-v0.2.5-yellow.svg)](https://github.com/WeisongZhao/PANELJ/blob/main/PANELJ_-0.2.5.jar/)
+[![releases](https://img.shields.io/badge/plugin-v0.2.5-yellow.svg)](https://raw.githubusercontent.com/WeisongZhao/PANELJ/main/PANELJ_-0.2.5.jar/)
 [![Github commit](https://img.shields.io/github/last-commit/WeisongZhao/PANELJ)](https://github.com/WeisongZhao/PANELJ/)
 [![License](https://img.shields.io/github/license/WeisongZhao/PANELJ)](https://github.com/WeisongZhao/PANELJ/blob/master/LICENSE/)<br>
 [![Twitter](https://img.shields.io/twitter/follow/weisong_zhao?label=weisong)](https://twitter.com/weisong_zhao/status/1370308101690118146)
@@ -33,7 +33,7 @@ This repository is for Simplified PANEL (w/o RSM) and will be in continued devel
 </p>
 <br>
 
-[Portal](https://github.com/WeisongZhao/PANELJ/blob/main/PANELJ_-0.2.5.jar/) to the plugin.
+[Portal](https://raw.githubusercontent.com/WeisongZhao/PANELJ/main/PANELJ_-0.2.5.jar/) to the plugin.
 
 ## PANELJ for error mapping (3-sigma curve)
 
