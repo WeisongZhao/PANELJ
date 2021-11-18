@@ -213,7 +213,8 @@ public class PANELJ_ extends JDialog implements PlugIn {
 					}
 				}
 			}
-			if (skip == 1) {rFRCMAP = AMF(rFRCMAP, w, h);}
+			rFRCMAP = AMF(rFRCMAP, w, h);
+//			if (skip == 1) {rFRCMAP = AMF(rFRCMAP, w, h);}
 			counter = 0;
 			for (int pixel = 0; pixel < w * h; pixel++) {
 				if (rFRCMAP[pixel] == 0)

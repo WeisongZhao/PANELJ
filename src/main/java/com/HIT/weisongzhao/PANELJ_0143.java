@@ -141,19 +141,20 @@ public class PANELJ_0143 extends JDialog implements PlugIn {
 						resolution = myFRC.calculateFireNumber(ipROI1, ipROI2, FRC.ThresholdMethod.FIXED_1_OVER_7);
 						if (!Double.isNaN(resolution) && !Double.isInfinite(resolution)) {
 							vectors.add(new double[] { yStart, xStart, resolution * pixelSize });
-						} else {
-							resolution = myFRC.calculateFireNumber(ipROI1, ipROI2, FRC.ThresholdMethod.THREE_SIGMA)
-									/ 1.1;
+						} 
+						else {
+							//							resolution = myFRC.calculateFireNumber(ipROI1, ipROI2, FRC.ThresholdMethod.THREE_SIGMA)
+							//									/ 1.1;
 
 							if (!Double.isNaN(resolution) && !Double.isInfinite(resolution)) {
 								vectors.add(new double[] { yStart, xStart, resolution * pixelSize });
 							}
-//						else {
-//							resolution = myFRC.calculateFireNumber(ipROI1, ipROI2, FRC.ThresholdMethod.FIVE_SIGMA);
-//							if (!Double.isNaN(resolution) && !Double.isInfinite(resolution)) {
-//								vectors.add(new double[] { yStart, xStart, resolution * pixelSize });
-//							}
-//						}
+							//						else {
+							//							resolution = myFRC.calculateFireNumber(ipROI1, ipROI2, FRC.ThresholdMethod.FIVE_SIGMA);
+							//							if (!Double.isNaN(resolution) && !Double.isInfinite(resolution)) {
+							//								vectors.add(new double[] { yStart, xStart, resolution * pixelSize });
+							//							}
+							//						}
 						}
 
 					}
@@ -181,7 +182,7 @@ public class PANELJ_0143 extends JDialog implements PlugIn {
 				for (int xx = 0; xx < skip; xx++) {
 					for (int yy = 0; yy < skip; yy++) {
 						position = Math.min((yPositions[p] + yy), h - 1) * w + Math.min((xPositions[p] + xx), w - 1);
-						
+
 						positionint = Math.min(Math.max(Math.round(position), 0), w * h - 1);
 						rFRCMAP[positionint] = values[p];
 						rFRCMAP[Math.min(positionint + 1, w * h - 1)] = values[p];
@@ -189,8 +190,8 @@ public class PANELJ_0143 extends JDialog implements PlugIn {
 				}
 			}
 			
-
-			if (skip == 1) {rFRCMAP = AMF(rFRCMAP, w, h);}
+			rFRCMAP = AMF(rFRCMAP, w, h);
+			// if (skip == 1) {rFRCMAP = AMF(rFRCMAP, w, h);}
 			counter = 0;
 			for (int pixel = 0; pixel < w * h; pixel++) {
 				if (rFRCMAP[pixel] == 0)
@@ -255,7 +256,7 @@ public class PANELJ_0143 extends JDialog implements PlugIn {
 
 	private FloatProcessor getROI(FloatProcessor ip, int x, int y, int w, int h) {
 		FloatProcessor ipCrop = new FloatProcessor(w, h);
-//		float ipmax = (float) ip.getMax();
+		//		float ipmax = (float) ip.getMax();
 		for (int j = 0; j < h; j++) {
 			for (int i = 0; i < w; i++) {
 
@@ -292,7 +293,7 @@ public class PANELJ_0143 extends JDialog implements PlugIn {
 		int extraWidth = paddedWidth - imageWidth;
 		int imageHeight = ip.getHeight();
 		int extraHeight = paddedHeight - imageHeight;
-//		System.out.printf("%d",paddedWidth);
+		//		System.out.printf("%d",paddedWidth);
 		// ImagePlus paddedImg;//For debugging -> possible to show padded image.
 
 		// Cast image in 8bits/16bits in 32 bits images.
@@ -394,9 +395,9 @@ public class PANELJ_0143 extends JDialog implements PlugIn {
 		System.setProperty("plugins.dir", pluginsDir);
 		new ImageJ();
 		ImagePlus image = IJ.openImage();
-//		ImagePlus psf = IJ.openImage();
+		//		ImagePlus psf = IJ.openImage();
 		image.show();
-//		psf.show();
+		//		psf.show();
 		IJ.runPlugIn(clazz.getName(), "");
 	}
 

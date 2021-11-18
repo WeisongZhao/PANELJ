@@ -213,8 +213,8 @@ public class sPANELJ_ extends JDialog implements PlugIn {
 
 			}
 
-			if (skip == 1) {rFRCMAP = AMF(rFRCMAP, w / 2, h / 2);}
-//			rFRCMAP = AMF(rFRCMAP, w / 2, h / 2);
+//			if (skip == 1) {rFRCMAP = AMF(rFRCMAP, w / 2, h / 2);}
+			rFRCMAP = AMF(rFRCMAP, w / 2, h / 2);
 			counter = 0;
 			for (int pixel = 0; pixel < w * h / 4; pixel++) {
 				if (rFRCMAP[pixel] == 0)
