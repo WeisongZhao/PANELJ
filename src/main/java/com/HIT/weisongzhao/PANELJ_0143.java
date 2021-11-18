@@ -8,9 +8,7 @@
 
 package com.HIT.weisongzhao;
 
-import static java.lang.Math.max;
 import static java.lang.Math.min;
-import static java.lang.Math.round;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -121,8 +119,8 @@ public class PANELJ_0143 extends JDialog implements PlugIn {
 			double resolution;
 			ArrayList<double[]> vectors = new ArrayList<double[]>();
 
-			for (int xStart = 0; xStart < h; xStart += skip) {
-				for (int yStart = 0; yStart < w; yStart += skip) {
+			for (int xStart = 0; xStart < h; xStart = xStart + skip) {
+				for (int yStart = 0; yStart < w; yStart = yStart + skip) {
 					IJ.showStatus("Start rFRC mapping - 1/7 hard threshold");
 					IJ.showProgress(w * xStart + yStart, w * h);
 					FloatProcessor ipROI1 = getROI(ip1, yStart, xStart, blockSize, blockSize);
@@ -163,6 +161,7 @@ public class PANELJ_0143 extends JDialog implements PlugIn {
 			}
 			IJ.showStatus("Ensemble results");
 			int nValues = vectors.size();
+
 			float[] xPositions = new float[nValues];
 			float[] yPositions = new float[nValues];
 			float[] values = new float[nValues];
@@ -181,15 +180,17 @@ public class PANELJ_0143 extends JDialog implements PlugIn {
 			for (int p = 0; p < nValues; p++) {
 				for (int xx = 0; xx < skip; xx++) {
 					for (int yy = 0; yy < skip; yy++) {
-						position = (min((yPositions[p] + yy), h - 1) * w + min((xPositions[p] + xx), w - 1));
-
-						positionint = min(max(min(round(position), Integer.MAX_VALUE), 0), w * h - 1);
-
+						position = Math.min((yPositions[p] + yy), h - 1) * w + Math.min((xPositions[p] + xx), w - 1);
+						
+						positionint = Math.min(Math.max(Math.round(position), 0), w * h - 1);
 						rFRCMAP[positionint] = values[p];
+						rFRCMAP[Math.min(positionint + 1, w * h - 1)] = values[p];
 					}
 				}
 			}
-			rFRCMAP = AMF(rFRCMAP, w, h);
+			
+
+			if (skip == 1) {rFRCMAP = AMF(rFRCMAP, w, h);}
 			counter = 0;
 			for (int pixel = 0; pixel < w * h; pixel++) {
 				if (rFRCMAP[pixel] == 0)
@@ -220,8 +221,6 @@ public class PANELJ_0143 extends JDialog implements PlugIn {
 		ImagePlus image = new ImagePlus("rFRC Map - 0.143 hard threshold", result);
 		NJ_LUT.applyLUT_PANEL_rFRC(image);
 		image.show();
-		rt.show("rFRC-Mapping metrics - 0.143 hard threshold");
-
 	}
 
 	private float[] AMF(float[] fp, int w, int h) {
