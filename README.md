@@ -33,7 +33,7 @@ This repository is for Simplified PANEL (w/o RSM) and will be in continued devel
 </p>
 <br>
 
-[Portal](https://raw.githubusercontent.com/WeisongZhao/PANELJ/main/PANELJ_-0.2.5.jar/) to the plugin.
+[Portal](https://github.com/WeisongZhao/PANELJ/blob/main/PANELJ_-0.2.5.jar/) to the plugin.
 
 ## PANELJ for error mapping (3-sigma curve)
 
