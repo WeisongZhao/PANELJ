@@ -35,6 +35,17 @@ This repository is for Simplified PANEL (w/o RSM) and will be in continued devel
 
 [Portal](https://github.com/WeisongZhao/PANELJ/blob/main/PANELJ_-0.2.5.jar/) to the plugin.
 
+## Usage of PANEL in specific
+
+- **Error mapping** of reconstructions without Ground-Truth (Reconstruction-1 vs Reconstruction-2) | 3σ curve is recommended;
+- **Error mapping** of deep-learning predictions of low-level vision tasks without Ground-Truth (Prediction-1 vs Prediction-2) | 3σ curve is recommended;
+- **Error mapping** of reconstructions/predictions with Ground-Truth (Reconstruction/Prediction vs Ground-Truth) | 3σ curve is recommended.
+- **Resolution mapping** of raw images (Image-1 vs Image-2) | 1/7 hard threshold is recommended;
+
+**Notably, when two-frame is not accessible, two alternative strategies for single-frame mapping is also provided (but not stable).** 
+
+**WARNING**: The current single-frame error/resolution mapping feature is still an unstable `beta version`.
+
 ## PANELJ for error mapping (3-sigma curve)
 
 <p align='center'>
@@ -56,8 +67,6 @@ Although the so-called 1/7 threshold has been discussed in our manuscript to be 
 This repository contains the java source code (Maven) for <b>PANEL</b> imagej plugin.  This plugin is for the <b>Simplified PANEL</b> (w/o RSM), and is also accompanied with resolution mapping (<b>1/7</b> golden threshold) feature. ~~The feature single-frame error/resolution mapping is currently not included in <b>PANELJ</b>~~ . The development of this imagej plugin is work in progress, so expect rough edges. 
 
 If you want to reproduce the results of PANEL publication, the <b>PANELM</b> (Matlab version) is recommended. Due to the distance between the core FRC calculation of <b>PANELJ</b>, and <b>PANELM</b>, and the difference between Fourier transform of Matlab and imagej, there may exist a gap between the results of <b>PANELM</b> and <b>PANELJ</b>. The implementations of core FRC, and Fourier transform in <b>PANELM</b> are more flexible and accurate. 
-
-**WARNING**: The current single-frame error/resolution mapping feature is still an unstable `beta version`.
 
 TO the [PANELM](https://github.com/WeisongZhao/PANELM)
 
