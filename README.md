@@ -37,12 +37,14 @@ This repository is for Simplified PANEL (w/o RSM) and will be in continued devel
 
 ## Usage of PANEL in specific
 
-- **Error mapping** of reconstructions without Ground-Truth (Reconstruction-1 vs Reconstruction-2) | 3σ curve is recommended;
-- **Error mapping** of deep-learning predictions of low-level vision tasks without Ground-Truth (Prediction-1 vs Prediction-2) | 3σ curve is recommended;
-- **Error mapping** of reconstructions/predictions with Ground-Truth (Reconstruction/Prediction vs Ground-Truth) | 3σ curve is recommended;
+There are exiting two major categories of reconstruction errors/artifacts in computational microscopy imaging, including the model errors and the data errors. The model errors are primarily caused by the difference between the artificially created estimation model and its physical, real-world counterpart, which can be detected and minimized by careful calibration of the optical microscopy system or enough training data in learning-based applications. The data errors are mostly introduced by joint effects of the noise condition and sampling capability of the hardware equipment, such as the sensors and cameras in microscopy systems. Notably, different from the model error, the data error are free from the model, inevitable, and may be hard to be suppressed by system calibration or adding more training datasets.
+
+- **Data error mapping** of reconstructions without Ground-Truth (Reconstruction-1 vs Reconstruction-2) | 3σ curve is recommended;
+- **Data error and leaked model error mapping** of deep-learning predictions of low-level vision tasks without Ground-Truth (Prediction-1 vs Prediction-2) | 3σ curve is recommended;
+- **Full error mapping** of reconstructions/predictions with Ground-Truth (Reconstruction/Prediction vs Ground-Truth) | 3σ curve is recommended;
 - **Resolution mapping** of raw images (Image-1 vs Image-2) | 1/7 hard threshold or 3σ curve are both feasible;
 
-**Notably, when two-frame is not accessible, two alternative strategies for single-frame mapping is also provided (but not stable, the two-frame version is recommended).** 
+**When two-frame is not accessible, two alternative strategies for single-frame mapping is also provided (but not stable, the two-frame version is recommended).** 
 
 **WARNING**: The current single-frame error/resolution mapping feature is still an unstable `beta version`.
 
