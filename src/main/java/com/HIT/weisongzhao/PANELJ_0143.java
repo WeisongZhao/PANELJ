@@ -216,12 +216,12 @@ public class PANELJ_0143 extends JDialog implements PlugIn {
 			rt.addValue("rFRC value", data.rFRC);
 			rt.addValue("Min FRC (nm)", data.minFRC);
 			rt.addValue("Max FRC (nm)", data.maxFRC);
-			result.addSlice("", rFRCMAP);
-
+			result.addSlice("", rFRCMAP);			
 		}
 		ImagePlus image = new ImagePlus("rFRC Map - 0.143 hard threshold", result);
 		NJ_LUT.applyLUT_PANEL_rFRC(image);
 		image.show();
+		rt.show("rFRC-Mapping metrics - 0.143 hard threshold");
 	}
 
 	private float[] AMF(float[] fp, int w, int h) {
