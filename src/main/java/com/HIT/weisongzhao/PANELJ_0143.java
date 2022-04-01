@@ -29,7 +29,7 @@ import ij.process.ImageProcessor;
 
 public class PANELJ_0143 extends JDialog implements PlugIn {
 	private static int blockSize = 128;
-	private static int backgroundIntensity = 5;
+	private static int backgroundIntensity = 15;
 	private static int skip = 1;
 	private static float pixelSize = 20;
 
@@ -63,7 +63,7 @@ public class PANELJ_0143 extends JDialog implements PlugIn {
 
 		GenericDialog gd = new GenericDialog("rFRC - 1/7 hard threshold");
 		gd.addChoice("Image sequence", titles, titles[imageChoice]);
-		gd.addNumericField("Block Size", blockSize, 0, 5, " pixel ");
+		gd.addNumericField("Block Size", blockSize, 0, 5, "pixel (128 in default)");
 		gd.addNumericField("Background Intensity", backgroundIntensity, 0, 5, "0~255 (background of your data)");
 		gd.addNumericField("Skip", skip, 0, 3, "pixel (Speed up calculation, 1~block-size/2)");
 		gd.addNumericField("Pixel Size", pixelSize, 2, 5, "(nm)");
