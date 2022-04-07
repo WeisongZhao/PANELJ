@@ -6,9 +6,9 @@
 //% It is a part of publication:
 //% Weisong Zhao et al. PANEL: quantitatively mapping reconstruction errors in
 //% super-resolution scale via rolling Fourier ring correlation,
-//% Nature Methods, X, XXX-XXX (2022).
+//% Nature Methods (2022).
 //% *********************************************************************************
-//%    Copyright 2019~2021 Weisong Zhao et al.
+//%    Copyright 2019~2022 Weisong Zhao et al.
 //%
 //%    This program is free software: you can redistribute it and/or modify
 //%    it under the terms of the Open Data Commons Open Database License v1.0.

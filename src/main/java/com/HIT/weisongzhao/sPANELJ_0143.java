@@ -2,8 +2,26 @@
 // educational purposes. In addition, we expect you to include adequate
 // citations and acknowledgments whenever you present or publish results that
 // are based on it.
-// This software and corresponding methods can only be used for non-commercial use, and they
-// are under Open Data Commons Open Database License v1.0.
+//% *********************************************************************************
+//% It is a part of publication:
+//% Weisong Zhao et al. PANEL: quantitatively mapping reconstruction errors in
+//% super-resolution scale via rolling Fourier ring correlation,
+//% Nature Methods (2022).
+//% *********************************************************************************
+//%    Copyright 2019~2022 Weisong Zhao et al.
+//%
+//%    This program is free software: you can redistribute it and/or modify
+//%    it under the terms of the Open Data Commons Open Database License v1.0.
+//%
+//%    This program is distributed in the hope that it will be useful,
+//%    but WITHOUT ANY WARRANTY; without even the implied warranty of
+//%    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+//%    Open Data Commons Open Database License for more details.
+//%
+//%    You should have received a copy of the
+//%    Open Data Commons Open Database License
+//%    along with this program.  If not, see:
+//%    <https://opendatacommons.org/licenses/odbl/>.
 
 package com.HIT.weisongzhao;
 
