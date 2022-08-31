@@ -170,13 +170,13 @@ public class PANELJ_ extends JDialog implements PlugIn {
 							if (!Double.isNaN(resolution) && !Double.isInfinite(resolution)) {
 								vectors.add(new double[] { yStart, xStart, resolution * pixelSize });
 							} else {
-								resolution = myFRC.calculateFireNumber(ipROI1, ipROI2, FRC.ThresholdMethod.FIXED_1_OVER_7)
-										* 1.143;
-//								resolution = myFRC.calculateFireNumber(ipROI1, ipROI2, FRC.ThresholdMethod.TWO_SIGMA)
-//										* 3 / 2;
+//								resolution = myFRC.calculateFireNumber(ipROI1, ipROI2, FRC.ThresholdMethod.FIXED_1_OVER_7)
+//										* 1.143;
+								resolution = myFRC.calculateFireNumber(ipROI1, ipROI2, FRC.ThresholdMethod.TWO_SIGMA)
+										* 3 / 2;
 								if (!Double.isNaN(resolution) && !Double.isInfinite(resolution)) {
 									vectors.add(new double[] { yStart, xStart, resolution * pixelSize });
-								}
+								} 
 							}
 						}
 

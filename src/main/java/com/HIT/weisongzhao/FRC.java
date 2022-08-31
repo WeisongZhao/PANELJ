@@ -908,7 +908,7 @@ public class FRC {
 //---------------------------------PANEL Modifications------------------------------------
 //---------------------------------PANEL Modifications------------------------------------
 //---------------------------------PANEL Modifications------------------------------------		
-//				threshold[i] = Math.min(sigma / Math.sqrt( t / 2.0), 1);
+//				threshold[i] = Math.min(sigma / Math.sqrt( t / 2.0), 1);				
 //				threshold[i] = Math.min(sigma / Math.sqrt( nr / 2.0), 1);
 			}
 			break;
