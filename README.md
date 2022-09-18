@@ -22,7 +22,7 @@
 </p>
 
 
-rFRC (rolling Fourier ring correlation) mapping and simplified PANEL (Pixel-level ANalysis of Error Locations) (w/o RSM) pinpointing. This repository will be in continued development. The full PANEL can be found in [PANELM](https://github.com/WeisongZhao/PANELM). If you find this useful, please cite the corresponding publication. [Weisong Zhao et al. PANEL: quantitatively mapping reconstruction errors at super-resolution scale by rolling Fourier ring correlation, <!-- Nature Methods -->, X, XXX-XXX (2022)](https://www.nature.com/nmeth/).
+rFRC (rolling Fourier ring correlation) mapping and simplified PANEL (Pixel-level ANalysis of Error Locations) (w/o RSM) pinpointing. This repository will be in continued development. The full PANEL can be found in [PANELM](https://github.com/WeisongZhao/PANELM). If you find this useful, please cite the corresponding publication. [Weisong Zhao et al. Quantitatively mapping local quality at super-resolution scale by rolling Fourier ring correlation, <!-- Nature Methods -->, X, XXX-XXX (2022)](https://www.nature.com/nmeth/). More details on [Wiki](https://github.com/WeisongZhao/PANELJ/wiki/). If it helps your research, please cite our work in your publications. 
 
 <br>
 <br>
@@ -37,11 +37,11 @@ rFRC (rolling Fourier ring correlation) mapping and simplified PANEL (Pixel-leve
 
 More details on [PANELJ Wiki](https://github.com/WeisongZhao/PANELJ/wiki/) & [PANELM Wiki](https://github.com/WeisongZhao/PANELM/wiki/).
 
-## Usage of PANEL in specific
+## Usages of rFRC and PANEL in specific
 
-**Uncertainty types:** There are exiting two major categories of reconstruction uncertainty in computational microscopy imaging, including the `model uncertainty` and the `data uncertainty`. The `model uncertainty` are primarily caused by the difference between the artificially created estimation model and its physical, real-world counterpart, which can be detected and minimized by careful calibration of the optical microscopy system or enough training data in learning-based applications. The `data uncertainty` are mostly introduced by joint effects of the noise condition and sampling capability of the hardware equipment. Notably, different from the `model uncertainty`, the `data uncertainty` are free from the model, inevitable, and may be hard to be suppressed by system calibration or adding more training datasets.
+The `rFRC` is for quantitatively mapping the local image quality (effective resolution, data uncertainty). The lower effective resolution gives a higher probability to the error existence, and thus we can use it to represent the uncertainty revealing the error distribution.
 
-**PANEL is capable of:**
+**rFRC is capable of:**
 - **Data uncertainty mapping** of reconstructions without Ground-Truth (Reconstruction-1 vs Reconstruction-2) | 3σ curve is recommended;
 - **Data uncertainty and leaked model uncertainty mapping** of deep-learning predictions of low-level vision tasks without Ground-Truth (Prediction-1 vs Prediction-2) | 3σ curve is recommended;
 - **Full error mapping** of reconstructions/predictions with Ground-Truth (Reconstruction/Prediction vs Ground-Truth) | 3σ curve is recommended;
@@ -49,7 +49,11 @@ More details on [PANELJ Wiki](https://github.com/WeisongZhao/PANELJ/wiki/) & [PA
 
 **When two-frame is not accessible, two alternative strategies for single-frame mapping is also provided (not stable, the two-frame version is recommended).** 
 
-**WARNING**: The current single-frame rFRC mapping feature is still an unstable `beta version`.
+**PANEL**
+
+- In this plugin, `PANEL` is a `filtered rFRC` map, for biologists to qualitatively pinpoint regions with low reliability as a concise visualization
+
+- Note that our `rFRC` and `PANEL` cannot fully pinpoint the unreliable regions induced by the model bias, which would require more extensive characterization and correction routines based on the underlying theory of the corresponding models.
 
 ## PANELJ for local quality mapping (3-sigma curve)
 
@@ -69,14 +73,11 @@ Although the so-called 1/7 threshold has been discussed in our manuscript to be 
 </p>
 
 ## Declaration
-This repository contains the java source code (Maven) for <b>PANEL</b> imagej plugin.  This plugin is for the <b>Simplified PANEL</b> (w/o RSM), and is also accompanied with resolution mapping (<b>1/7</b> golden threshold) feature. ~~The feature single-frame error/resolution mapping is currently not included in <b>PANELJ</b>~~ . The development of this imagej plugin is work in progress, so expect rough edges. 
+This repository contains the java source code (Maven) for <b>rFRC & PANEL</b> imagej plugin. The development of this imagej plugin is work in progress, so expect rough edges. 
 
-If you want to reproduce the results of PANEL publication, the <b>PANELM</b> (Matlab version) is recommended. Due to the distance between the core FRC calculation of <b>PANELJ</b>, and <b>PANELM</b>, and the difference between Fourier transform of Matlab and imagej, there may exist a gap between the results of <b>PANELM</b> and <b>PANELJ</b>. The implementations of core FRC, and Fourier transform in <b>PANELM</b> are more flexible and accurate. 
+If you want to reproduce the results of the publication, the <b>PANELM</b> (Matlab version) is recommended. Due to the distance between the core FRC calculation of <b>PANELJ</b>, and <b>PANELM</b>, and the difference between Fourier transform of Matlab and imagej, there may exist a gap between the results of <b>PANELM</b> and <b>PANELJ</b>. The implementations of core FRC, and Fourier transform in <b>PANELM</b> are more flexible and accurate. 
 
 TO the [PANELM](https://github.com/WeisongZhao/PANELM)
-
-Here is an example dataset [LDSMLM_20nmpixel_background_15.tif](https://github.com/WeisongZhao/PANELJ/releases/download/v0.2.5/LDSMLM_20nmpixel_background_15.tif).
-
 
 
 ## Version
