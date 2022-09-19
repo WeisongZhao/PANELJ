@@ -33,7 +33,7 @@ rFRC (rolling Fourier ring correlation) mapping and simplified PANEL (Pixel-leve
 </p>
 <br>
 
-[Portal](https://github.com/WeisongZhao/PANELJ/blob/main/PANELJ_-0.2.5.jar/) to the plugin.
+[Portal](https://github.com/WeisongZhao/PANELJ/raw/main/PANELJ_-0.2.5.jar) to the plugin.
 
 More details on [PANELJ Wiki](https://github.com/WeisongZhao/PANELJ/wiki/) & [PANELM Wiki](https://github.com/WeisongZhao/PANELM/wiki/).
 
