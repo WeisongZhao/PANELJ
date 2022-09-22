@@ -4,8 +4,8 @@
 // are based on it.
 //% *********************************************************************************
 //% It is a part of publication:
-//% Weisong Zhao et al. PANEL: quantitatively mapping reconstruction errors in
-//% super-resolution scale via rolling Fourier ring correlation,
+//% Weisong Zhao et al. Quantitatively mapping local quality at
+//% super-resolution scale by rolling Fourier ring correlation,
 //% Nature Methods (2022).
 //% *********************************************************************************
 //%    Copyright 2019~2022 Weisong Zhao et al.
@@ -229,7 +229,7 @@ public class PANELJ_0143 extends JDialog implements PlugIn {
 			data.rFRC = mean / min - 1;
 
 			rt.incrementCounter();
-			rt.addValue("Mean (nm)", data.meanFRC);
+			rt.addValue("Mean FRC (nm)", data.meanFRC);
 			rt.addValue("rFRC value", data.rFRC);
 			rt.addValue("Min FRC (nm)", data.minFRC);
 			rt.addValue("Max FRC (nm)", data.maxFRC);

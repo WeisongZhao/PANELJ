@@ -4,8 +4,8 @@
 // are based on it.
 //% *********************************************************************************
 //% It is a part of publication:
-//% Weisong Zhao et al. PANEL: quantitatively mapping reconstruction errors in
-//% super-resolution scale via rolling Fourier ring correlation,
+//% Weisong Zhao et al. Quantitatively mapping local quality at
+//% super-resolution scale by rolling Fourier ring correlation,
 //% Nature Methods (2022).
 //% *********************************************************************************
 //%    Copyright 2019~2022 Weisong Zhao et al.
@@ -166,14 +166,14 @@ public class PANELJ_ extends JDialog implements PlugIn {
 							vectors.add(new double[] { yStart, xStart, resolution * pixelSize });
 						} else {
 							resolution = myFRC.calculateFireNumber(ipROI1, ipROI2, FRC.ThresholdMethod.FIVE_SIGMA)
-									/ (5 / 3);
+									/ (5 / 3) / (5 / 3);
 							if (!Double.isNaN(resolution) && !Double.isInfinite(resolution)) {
 								vectors.add(new double[] { yStart, xStart, resolution * pixelSize });
 							} else {
 //								resolution = myFRC.calculateFireNumber(ipROI1, ipROI2, FRC.ThresholdMethod.FIXED_1_OVER_7)
 //										* 1.143;
 								resolution = myFRC.calculateFireNumber(ipROI1, ipROI2, FRC.ThresholdMethod.TWO_SIGMA)
-										* 3 / 2;
+										/ (2 / 3) / (2 / 3);
 								if (!Double.isNaN(resolution) && !Double.isInfinite(resolution)) {
 									vectors.add(new double[] { yStart, xStart, resolution * pixelSize });
 								} 
@@ -235,7 +235,7 @@ public class PANELJ_ extends JDialog implements PlugIn {
 			data.minFRC = min;
 			data.rFRC = mean / min - 1;
 			rt.incrementCounter();
-			rt.addValue("Mean (nm)", data.meanFRC);
+			rt.addValue("Mean FRC (nm)", data.meanFRC);
 			rt.addValue("rFRC value", data.rFRC);
 			rt.addValue("Min FRC (nm)", data.minFRC);
 			rt.addValue("Max FRC (nm)", data.maxFRC);
