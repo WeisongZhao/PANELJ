@@ -880,15 +880,15 @@ public class FRC {
 
 		// We use fall through here to increment sigma to the appropriate level.
 		case FIVE_SIGMA:
-			sigma++;
+			sigma ++;
 		case FOUR_SIGMA:
-			sigma++;
+			sigma ++;
 		case THREE_SIGMA:
-			sigma++;
+			sigma ++;
 		case TWO_SIGMA:
-			sigma++;
+			sigma ++;
 		case ONE_SIGMA:
-			sigma++;
+			sigma ++;
 			for (int i = 0; i < threshold.length; i++, nr = TWO_PI * i) {
 				// Note: frcCurve.get(i)[2] holds the number of samples that were taken from the
 				// circle.
@@ -908,7 +908,7 @@ public class FRC {
 //---------------------------------PANEL Modifications------------------------------------
 //---------------------------------PANEL Modifications------------------------------------
 //---------------------------------PANEL Modifications------------------------------------		
-//				threshold[i] = Math.min(sigma / Math.sqrt( t / 2.0), 1);				
+//				threshold[i] = Math.min(sigma / Math.sqrt( (t) / 2.0), 1.0);				
 //				threshold[i] = Math.min(sigma / Math.sqrt( nr / 2.0), 1);
 			}
 			break;

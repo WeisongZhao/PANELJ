@@ -13,7 +13,7 @@ public class About_ extends JDialog implements PlugIn {
 	@Override
 	public void run(String arg) {
 		this.walk.fillAbout("rFRC mapping and PANEL pinpointing", " 22/09/2022 updated, v0.2.5",
-				" rFRC: rolling Fourier Ring Correlation. <br>PANEL: Pixel-level ANalysis of Error Locations.",
+				"rFRC: rolling Fourier Ring Correlation. <br>PANEL: Pixel-level ANalysis of Error Locations.",
 				"School of Instrumentation Science and Engineering","Harbin Institute of Technology",
 				"Weisong Zhao",
 				"<p style=\"text-align:left\">"

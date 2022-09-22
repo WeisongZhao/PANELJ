@@ -166,14 +166,14 @@ public class PANELJ_ extends JDialog implements PlugIn {
 							vectors.add(new double[] { yStart, xStart, resolution * pixelSize });
 						} else {
 							resolution = myFRC.calculateFireNumber(ipROI1, ipROI2, FRC.ThresholdMethod.FIVE_SIGMA)
-									/ (5 / 3) / (5 / 3);
+									* 3 / 5;
 							if (!Double.isNaN(resolution) && !Double.isInfinite(resolution)) {
 								vectors.add(new double[] { yStart, xStart, resolution * pixelSize });
 							} else {
 //								resolution = myFRC.calculateFireNumber(ipROI1, ipROI2, FRC.ThresholdMethod.FIXED_1_OVER_7)
 //										* 1.143;
 								resolution = myFRC.calculateFireNumber(ipROI1, ipROI2, FRC.ThresholdMethod.TWO_SIGMA)
-										/ (2 / 3) / (2 / 3);
+										* 3 / 2;
 								if (!Double.isNaN(resolution) && !Double.isInfinite(resolution)) {
 									vectors.add(new double[] { yStart, xStart, resolution * pixelSize });
 								} 
@@ -215,8 +215,8 @@ public class PANELJ_ extends JDialog implements PlugIn {
 					}
 				}
 			}
-			rFRCMAP = AMF(rFRCMAP, w, h);
-//			if (skip == 1) {rFRCMAP = AMF(rFRCMAP, w, h);}
+//			rFRCMAP = AMF(rFRCMAP, w, h);
+			if (skip == 1) {rFRCMAP = AMF(rFRCMAP, w, h);}
 			counter = 0;
 			for (int pixel = 0; pixel < w * h; pixel++) {
 				if (rFRCMAP[pixel] == 0)
@@ -239,8 +239,8 @@ public class PANELJ_ extends JDialog implements PlugIn {
 			rt.addValue("rFRC value", data.rFRC);
 			rt.addValue("Min FRC (nm)", data.minFRC);
 			rt.addValue("Max FRC (nm)", data.maxFRC);
-
-			rFRCMASK = AMF(rFRCMASK, w, h);
+			if (skip == 1) {rFRCMAP = AMF(rFRCMAP, w, h);}
+//			rFRCMASK = AMF(rFRCMASK, w, h);
 			result.addSlice("", rFRCMAP);
 			resultmask.addSlice("", rFRCMASK);
 		}

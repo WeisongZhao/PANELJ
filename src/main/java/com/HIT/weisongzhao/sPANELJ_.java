@@ -337,12 +337,11 @@ public class sPANELJ_ extends JDialog implements PlugIn {
 						vectors.add(new double[] { xStart, yStart, resolution * pixelSize });
 					} else {
 						resolution = myFRC.calculateFireNumber(ipROI1, ipROI2, sFRC.ThresholdMethod.FIVE_SIGMA)
-								/ (5 / 3) / (5 / 3);
+								* 9 / 25;
 						if (!Double.isNaN(resolution) && !Double.isInfinite(resolution)) {
 							vectors.add(new double[] { xStart, yStart, resolution * pixelSize });
 						} else {
-							resolution = myFRC.calculateFireNumber(ipROI1, ipROI2, sFRC.ThresholdMethod.TWO_SIGMA) / (2
-									/ 3) / (2 / 3);
+							resolution = myFRC.calculateFireNumber(ipROI1, ipROI2, sFRC.ThresholdMethod.TWO_SIGMA) * 9 / 4;
 							if (!Double.isNaN(resolution) && !Double.isInfinite(resolution)) {
 								vectors.add(new double[] { xStart, yStart, resolution * pixelSize });
 							}
