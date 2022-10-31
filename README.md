@@ -54,7 +54,7 @@ The `rFRC` is for quantitatively mapping the local image quality (effective reso
 
 - In this plugin, `PANEL` is a `filtered rFRC` map, for biologists to qualitatively pinpoint regions with low reliability as a concise visualization
 
-- Note that our `rFRC` and `PANEL` cannot fully pinpoint the unreliable regions induced by the model bias, which would require more extensive characterization and correction routines based on the underlying theory of the corresponding models.
+- Note that our `rFRC` and `PANEL` using two independent captures cannot fully pinpoint the unreliable regions induced by the model bias, which would require more extensive characterization and correction routines based on the underlying theory of the corresponding models.
 
 ## PANELJ for local quality mapping (3-sigma curve)
 
