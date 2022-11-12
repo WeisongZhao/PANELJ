@@ -1,6 +1,6 @@
 
 [![website](https://img.shields.io/badge/website-up-green.svg)](https://weisongzhao.github.io/PANELJ/)
-[![paper](https://img.shields.io/badge/paper-nat.%20methods-black.svg)](https://www.nature.com/nmeth/)
+[![paper](https://img.shields.io/badge/paper-nat.%20methods-black.svg)](https://www.nature.com/nbt/)
 [![releases](https://img.shields.io/badge/plugin-v0.2.5-yellow.svg)](https://raw.githubusercontent.com/WeisongZhao/PANELJ/main/PANELJ_-0.2.5.jar/)
 [![Github commit](https://img.shields.io/github/last-commit/WeisongZhao/PANELJ)](https://github.com/WeisongZhao/PANELJ/)
 [![License](https://img.shields.io/github/license/WeisongZhao/PANELJ)](https://github.com/WeisongZhao/PANELJ/blob/master/LICENSE/)<br>
@@ -22,7 +22,7 @@
 </p>
 
 
-rFRC (rolling Fourier ring correlation) mapping and simplified PANEL (Pixel-level ANalysis of Error Locations) (w/o RSM) pinpointing. This repository will be in continued development. The full PANEL can be found in [PANELM](https://github.com/WeisongZhao/PANELM). If you find this useful, please cite the corresponding publication. [Weisong Zhao et al. Quantitatively mapping local quality at super-resolution scale by rolling Fourier ring correlation, <!-- Nature Methods -->, X, XXX-XXX (2022)](https://www.nature.com/nmeth/). More details on [Wiki](https://github.com/WeisongZhao/PANELJ/wiki/). If it helps your research, please cite our work in your publications. 
+rFRC (rolling Fourier ring correlation) mapping and simplified PANEL (Pixel-level ANalysis of Error Locations) (w/o RSM) pinpointing. This repository will be in continued development. The full PANEL can be found in [PANELM](https://github.com/WeisongZhao/PANELM). If you find this useful, please cite the corresponding publication. [Weisong Zhao et al. Quantitatively mapping local quality at super-resolution scale by rolling Fourier ring correlation, <!-- Nature Biotechnology -->, X, XXX-XXX (2022)](https://www.nature.com/nbt/). More details on [Wiki](https://github.com/WeisongZhao/PANELJ/wiki/). If it helps your research, please cite our work in your publications. 
 
 <br>
 <br>
