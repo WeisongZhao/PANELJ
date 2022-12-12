@@ -22,7 +22,7 @@
 </p>
 
 
-rFRC (rolling Fourier ring correlation) mapping and simplified PANEL (Pixel-level ANalysis of Error Locations) (w/o RSM) pinpointing. This repository will be in continued development. The full PANEL can be found in [PANELM](https://github.com/WeisongZhao/PANELM). If you find this useful, please cite the corresponding publication. [Weisong Zhao et al. Quantitatively mapping local quality of super-resolution microscopy by rolling Fourier ring correlation, <!-- Nature Biotechnology -->, X, XXX-XXX (2022)](https://doi.org/10.1101/2022.12.01.518675/). More details on [Wiki](https://github.com/WeisongZhao/PANELJ/wiki/). If it helps your research, please cite our work in your publications. 
+rFRC (rolling Fourier ring correlation) mapping and simplified PANEL (Pixel-level ANalysis of Error Locations) (w/o RSM) pinpointing. This repository will be in continued development. The full PANEL can be found in [PANELM](https://github.com/WeisongZhao/PANELM). If you find this useful, please cite the corresponding publication. [Weisong Zhao et al. Quantitatively mapping local quality of super-resolution microscopy by rolling Fourier ring correlation, <!-- Nature Biotechnology -->, X, XXX-XXX (2022)](https://doi.org/10.1101/2022.12.01.518675). More details on [Wiki](https://github.com/WeisongZhao/PANELJ/wiki/). If it helps your research, please cite our work in your publications. 
 
 <br>
 <br>
