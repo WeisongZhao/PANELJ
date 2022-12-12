@@ -37,6 +37,9 @@ rFRC (rolling Fourier ring correlation) mapping and simplified PANEL (Pixel-leve
 
 More details on [PANELJ Wiki](https://github.com/WeisongZhao/PANELJ/wiki/) & [PANELM Wiki](https://github.com/WeisongZhao/PANELM/wiki/).
 
+If you are not a imagej user, you can have a try on the Python version: [PANELpy](https://github.com/WeisongZhao/PANELpy), or the MATLAB  version: [PANELM](https://github.com/WeisongZhao/PANELM).
+
+
 ## Usages of rFRC and PANEL in specific
 
 The `rFRC` is for quantitatively mapping the local image quality (effective resolution, data uncertainty). The lower effective resolution gives a higher probability to the error existence, and thus we can use it to represent the uncertainty revealing the error distribution.
