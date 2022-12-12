@@ -1,6 +1,6 @@
 
 [![website](https://img.shields.io/badge/website-up-green.svg)](https://weisongzhao.github.io/PANELJ/)
-[![paper](https://img.shields.io/badge/paper-nat.%20biotech-black.svg)](https://www.nature.com/nbt/)
+[![paper](https://img.shields.io/badge/paper-nat.%20commun-black.svg)](https://www.nature.com/nbt/)
 [![releases](https://img.shields.io/badge/plugin-v0.2.5-yellow.svg)](https://raw.githubusercontent.com/WeisongZhao/PANELJ/main/PANELJ_-0.2.5.jar/)
 [![Github commit](https://img.shields.io/github/last-commit/WeisongZhao/PANELJ)](https://github.com/WeisongZhao/PANELJ/)
 [![License](https://img.shields.io/github/license/WeisongZhao/PANELJ)](https://github.com/WeisongZhao/PANELJ/blob/master/LICENSE/)<br>
@@ -22,7 +22,7 @@
 </p>
 
 
-rFRC (rolling Fourier ring correlation) mapping and simplified PANEL (Pixel-level ANalysis of Error Locations) (w/o RSM) pinpointing. This repository will be in continued development. The full PANEL can be found in [PANELM](https://github.com/WeisongZhao/PANELM). If you find this useful, please cite the corresponding publication. [Weisong Zhao et al. Quantitatively mapping local quality of super-resolution microscopy by rolling Fourier ring correlation, <!-- Nature Biotechnology -->, X, XXX-XXX (2022)](https://www.nature.com/nbt/). More details on [Wiki](https://github.com/WeisongZhao/PANELJ/wiki/). If it helps your research, please cite our work in your publications. 
+rFRC (rolling Fourier ring correlation) mapping and simplified PANEL (Pixel-level ANalysis of Error Locations) (w/o RSM) pinpointing. This repository will be in continued development. The full PANEL can be found in [PANELM](https://github.com/WeisongZhao/PANELM). If you find this useful, please cite the corresponding publication. [Weisong Zhao et al. Quantitatively mapping local quality of super-resolution microscopy by rolling Fourier ring correlation, <!-- Nature Biotechnology -->, X, XXX-XXX (2022)](https://doi.org/10.1101/2022.12.01.518675/). More details on [Wiki](https://github.com/WeisongZhao/PANELJ/wiki/). If it helps your research, please cite our work in your publications. 
 
 <br>
 <br>
@@ -84,6 +84,11 @@ TO the [PANELM](https://github.com/WeisongZhao/PANELM)
 ## Version
 - v0.2.5 Single-frame rFRC mapping
 - v0.1.0 Initial rFRC mapping
+
+## Related links: 
+- Python version: [sparse-deconv-py](https://github.com/WeisongZhao/PANELpy/)
+- MATLAB version: [sparse-deconv-py](https://github.com/WeisongZhao/PANELM/)
+- **Preprint:** [Weisong Zhao et al., Quantitatively mapping local quality of super-resolution microscopy by rolling Fourier ring correlation, bioRxiv (2022).](https://doi.org/10.1101/2022.12.01.518675)
 
 
 <details>
