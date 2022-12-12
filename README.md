@@ -86,8 +86,8 @@ TO the [PANELM](https://github.com/WeisongZhao/PANELM)
 - v0.1.0 Initial rFRC mapping
 
 ## Related links: 
-- Python version: [sparse-deconv-py](https://github.com/WeisongZhao/PANELpy/)
-- MATLAB version: [sparse-deconv-py](https://github.com/WeisongZhao/PANELM/)
+- Python version: [PANELpy](https://github.com/WeisongZhao/PANELpy/)
+- MATLAB version: [PANELM](https://github.com/WeisongZhao/PANELM/)
 - **Preprint:** [Weisong Zhao et al., Quantitatively mapping local quality of super-resolution microscopy by rolling Fourier ring correlation, bioRxiv (2022).](https://doi.org/10.1101/2022.12.01.518675)
 
 
