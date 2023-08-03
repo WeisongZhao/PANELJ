@@ -12,7 +12,7 @@ public class About_ extends JDialog implements PlugIn {
 
 	@Override
 	public void run(String arg) {
-		this.walk.fillAbout("rFRC mapping and PANEL pinpointing", " 22/09/2022 updated, v0.2.5",
+		this.walk.fillAbout("rFRC mapping and PANEL pinpointing", " 04/08/2023 updated, v0.2.5",
 				"rFRC: rolling Fourier Ring Correlation. <br>PANEL: Pixel-level ANalysis of Error Locations.",
 				"School of Instrumentation Science and Engineering","Harbin Institute of Technology",
 				"Weisong Zhao",
@@ -24,7 +24,7 @@ public class About_ extends JDialog implements PlugIn {
 						+"<br>(iv) <b>Full error mapping</b> of reconstructions or predictions <b>with</b> ground-truth (Reconstruction or Prediction vs Ground-truth);"
 						+"<br>(v) <b> Resolution mapping</b> of raw images (Image-1 vs Image-2)."					
 						+"<br><br><b>It is a part of publication:</b>"
-						+ "<br> Weisong Zhao et al. Quantitatively mapping local quality at super-resolution scale by rolling Fourier ring correlation, Nature Biotechnology (2022)."
+						+ "<br> Weisong Zhao et al. Quantitatively mapping local quality of super-resolution microscopy by rolling Fourier ring correlation, Light Science & Applications (2023)."
 						+ "<br><br><b>Acknowledgements:</b><br>This plugin is for rFRC mapping and simplified PANEL (w/o RSM) pinpointing. Please cite PANEL in your publications, if it helps your research."
 						+ "<br><br><b>Open source:</b><br>https://github.com/WeisongZhao/PANELJ" + "");
 

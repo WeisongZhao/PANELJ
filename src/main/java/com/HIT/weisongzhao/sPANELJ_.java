@@ -4,11 +4,11 @@
 // are based on it.
 //% *********************************************************************************
 //% It is a part of publication:
-//% Weisong Zhao et al. Quantitatively mapping local quality at
-//% super-resolution scale by rolling Fourier ring correlation,
-//% Nature Methods (2022).
+//% Weisong Zhao et al. Quantitatively mapping local quality of
+//% super-resolution microscopy by rolling Fourier ring correlation,
+//% Light Science & Applications (2023).
 //% *********************************************************************************
-//%    Copyright 2019~2022 Weisong Zhao et al.
+//%    Copyright 2019~2023 Weisong Zhao et al.
 //%
 //%    This program is free software: you can redistribute it and/or modify
 //%    it under the terms of the Open Data Commons Open Database License v1.0.
