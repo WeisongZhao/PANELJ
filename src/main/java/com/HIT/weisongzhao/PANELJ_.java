@@ -6,7 +6,7 @@
 //% It is a part of publication:
 //% Weisong Zhao et al. Quantitatively mapping local quality of
 //% super-resolution microscopy by rolling Fourier ring correlation,
-//% Light Science & Applications (2023).
+//% Light: Science & Applications (2023).
 //% *********************************************************************************
 //%    Copyright 2019~2023 Weisong Zhao et al.
 //%
