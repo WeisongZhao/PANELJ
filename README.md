@@ -6,7 +6,7 @@
 [![releases](https://img.shields.io/badge/plugin-v0.2.5-yellow.svg)](https://raw.githubusercontent.com/WeisongZhao/PANELJ/main/PANELJ_-0.2.5.jar/)<br>
 [![paper](https://img.shields.io/badge/paper-light:%20sci.%20appl.-black.svg)](https://doi.org/10.1038/s41377-023-01321-0)
 [![post](https://img.shields.io/badge/post-behind%20the%20paper-black.svg)](https://communities.springernature.com/posts/a-nice-piece-of-the-puzzle-for-super-resolution-microscopy)<br>
-[![Twitter](https://img.shields.io/twitter/follow/weisong_zhao?label=weisong)](https://twitter.com/weisong_zhao/status/1370308101690118146)
+[![Twitter](https://img.shields.io/twitter/follow/weisong_zhao?label=weisong)](https://twitter.com/hashtag/rFRCmetric?src=hashtag_click)
 [![GitHub watchers](https://img.shields.io/github/watchers/WeisongZhao/PANELJ?style=social)](https://github.com/WeisongZhao/PANELJ/) 
 [![GitHub stars](https://img.shields.io/github/stars/WeisongZhao/PANELJ?style=social)](https://github.com/WeisongZhao/PANELJ/) 
 [![GitHub forks](https://img.shields.io/github/forks/WeisongZhao/PANELJ?style=social)](https://github.com/WeisongZhao/PANELJ/)
